@@ -1,0 +1,59 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.todo-main-container {
+    & .todo-main-container-form {
+        box-shadow: -3px 4px 20px 3px #eee;
+    }
+}
+
+.circle_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.25rem;
+    aspect-ratio: 1/1;
+    & .circle_svg {
+        --_circle-radius: 2.813rem;
+        --_svg-width: 2.25rem;
+        --_stroke-width: 0.625rem; /* svg-width - (circle-radius * 2) */
+
+        width: var(--_svg-width);
+        height: var(--_svg-width);
+
+        stroke: black;
+        stroke-width: var(--_stroke-width);
+
+        stroke-dashoffset: 1;
+        stroke-dasharray: 1 1000;
+
+        animation:
+            loader 1500ms infinite linear,
+            spin 3000ms infinite linear;
+    }
+}
+
+@keyframes loader {
+    0% {
+        stroke-dashoffset: 1;
+        stroke-dasharray: 1 1000;
+    }
+
+    100% {
+        stroke-dashoffset: calc(var(--_circle-radius) * -2 * 3.1415);
+        stroke-dasharray: calc(var(--_circle-radius) * 2 * 3.1415) 1000;
+    }
+}
+
+@keyframes spin {
+    0% {
+        rotate: 0deg;
+    }
+
+    100% {
+        rotate: 360deg;
+    }
+}
