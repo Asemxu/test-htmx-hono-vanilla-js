@@ -13,8 +13,7 @@ const Layout = (content) => html`
   <link rel="stylesheet" href="/static/styles/tailwind.css">
   <link rel="stylesheet" href="/static/styles/app.css">
   <script src="/static/scripts/htmx.min.js"></script>
-  <script src="https://unpkg.com/htmx-ext-client-side-templates@2.0.0/client-side-templates.js"></script>
-  <script src="https://unpkg.com/mustache@latest"></script>
+  <script src="https://unpkg.com/htmx-ext-response-targets@2.0.0/response-targets.js"></script>
 </head>
 <body>
   ${content}

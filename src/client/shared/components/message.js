@@ -1,7 +1,11 @@
 import { html } from "hono/html";
-
-const Message = ({ text , className } ) => 
+import message from "../../models/message.js";
+/**
+ * @param {message} message
+ * @returns {import("hono/utils/html").HtmlEscapedString}
+ */
+const Message = (message) => 
 html`
-    <p class="${className}">${text}</p>
+    <p class="${message.className}">${message.text}</p>
 `
 export default Message
